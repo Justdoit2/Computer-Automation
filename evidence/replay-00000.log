@@ -1,0 +1,4 @@
+# Live replay — mock application error
+# npm run replay -- --member 00000
+
+outcome=APP_ERROR reason=Application error

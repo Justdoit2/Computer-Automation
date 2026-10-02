@@ -1,0 +1,55 @@
+{
+  "apiVersion": 1,
+  "id": "lookup-member",
+  "name": "Look up member savings balance",
+  "description": "Search core CIF by member id and return the savings balance. Unknown ids are a business outcome (NOT_FOUND), not a crash.",
+  "target": {
+    "appId": "harbor-cu-core",
+    "entryUrl": "http://127.0.0.1:3000"
+  },
+  "inputs": {
+    "memberId": {
+      "type": "string",
+      "description": "Member number supplied per invocation"
+    }
+  },
+  "outputs": {
+    "savingsBalance": {
+      "type": "string",
+      "description": "Formatted savings balance, e.g. $1,240.55"
+    }
+  },
+  "steps": [
+    {
+      "kind": "type",
+      "locator": {
+        "by": "label",
+        "value": "Member ID"
+      },
+      "bindInput": "memberId"
+    },
+    {
+      "kind": "click",
+      "locator": {
+        "by": "role",
+        "role": "button",
+        "name": "Search"
+      }
+    },
+    {
+      "kind": "extract",
+      "locator": {
+        "by": "rowheader",
+        "name": "Savings balance"
+      },
+      "bindOutput": "savingsBalance"
+    }
+  ],
+  "checkpoint": {
+    "successText": "Savings balance",
+    "notFoundText": "Record not found",
+    "validationText": "Member ID is required",
+    "appErrorText": "Application error"
+  },
+  "locatorStrategy": "Target controls the way an operator or screen reader would: accessible label and role+name. No CSS ids or test IDs. Same locators can map to an a11y tree on desktop later."
+}

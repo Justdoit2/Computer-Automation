@@ -1,0 +1,6 @@
+{
+  "allowedOrigins": ["http://127.0.0.1:3000"],
+  "allowedActions": ["type", "click", "extract"],
+  "blockedControlNames": ["Transfer", "Submit wire", "Delete member", "Approve", "Confirm transfer"],
+  "sensitiveLabelPatterns": ["password", "ssn", "pin", "token", "secret", "credential"]
+}

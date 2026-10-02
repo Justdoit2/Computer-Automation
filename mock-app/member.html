@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Harbor CU Core — Member Record</title>
+    <style>
+      body {
+        margin: 0;
+        background: #c0c0c0;
+        font-family: Tahoma, Verdana, sans-serif;
+        font-size: 13px;
+      }
+      .banner {
+        background: #003366;
+        color: #fff;
+        padding: 6px 10px;
+        font-weight: bold;
+      }
+      .crumb {
+        background: #e6e6e6;
+        border-bottom: 1px solid #808080;
+        padding: 4px 10px;
+      }
+      .screen {
+        margin: 16px;
+        background: #fff;
+        border: 2px solid #003366;
+      }
+      .screen-title {
+        background: #003366;
+        color: #fff;
+        padding: 4px 8px;
+      }
+      table.grid {
+        margin: 12px;
+        border-collapse: collapse;
+      }
+      table.grid td {
+        border: 1px solid #808080;
+        padding: 4px 10px;
+      }
+      .msg {
+        margin: 12px;
+        padding: 8px;
+        border: 1px solid #990000;
+        background: #ffe6e6;
+      }
+      a {
+        display: inline-block;
+        margin: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="banner">Harbor Credit Union — Core CIF</div>
+    <div class="crumb">Member Services &gt; Inquiry &gt; Record</div>
+    <div class="screen">
+      <div class="screen-title">Member Record</div>
+      <div id="body"></div>
+      <a href="index.html">New inquiry</a>
+    </div>
+    <script>
+      var MEMBERS = {
+        "12345": {
+          name: "Jordan Hale",
+          status: "Active",
+          savingsBalance: "$1,240.55",
+        },
+        "12346": {
+          name: "Riley Chen",
+          status: "Active",
+          savingsBalance: "$88.12",
+        },
+      };
+
+      var params = new URLSearchParams(window.location.search);
+      var memberId = (params.get("memberId") || "").trim();
+      var record = MEMBERS[memberId];
+      var root = document.getElementById("body");
+
+      if (!memberId) {
+        root.innerHTML =
+          "<p class='msg' role='status'>Member ID is required.</p>";
+      } else if (memberId === "00000") {
+        root.innerHTML =
+          "<p class='msg' role='status'>Application error. Please try again later.</p>";
+      } else if (record) {
+        root.innerHTML =
+          "<table class='grid' cellspacing='0'>" +
+          "<tr><th scope='row'>Member ID</th><td>" +
+          memberId +
+          "</td></tr>" +
+          "<tr><th scope='row'>Name</th><td>" +
+          record.name +
+          "</td></tr>" +
+          "<tr><th scope='row'>Status</th><td>" +
+          record.status +
+          "</td></tr>" +
+          "<tr><th scope='row'>Savings balance</th><td>" +
+          record.savingsBalance +
+          "</td></tr>" +
+          "</table>";
+      } else {
+        root.innerHTML =
+          "<p class='msg' role='status'>Record not found. No member exists for the requested ID.</p>";
+      }
+    </script>
+  </body>
+</html>

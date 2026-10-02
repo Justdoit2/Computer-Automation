@@ -1,0 +1,11 @@
+{
+  "capabilityId": "lookup-member",
+  "goal": "Look up member 12345 and read their current savings balance",
+  "step": 2,
+  "reason": "Agent typed the member id. Search is left to a human on this live session.",
+  "url": "http://127.0.0.1:3000/",
+  "title": "Harbor CU Core — Member Inquiry",
+  "controller": "human",
+  "screenshot": "/Users/almaniu/dev/computer-use-automation/evidence/handoff-before.png",
+  "createdAt": "2026-09-27T23:24:37.034Z"
+}

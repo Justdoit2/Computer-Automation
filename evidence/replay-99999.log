@@ -1,0 +1,4 @@
+# Live replay — known business outcome (not a crash)
+# npm run replay -- --member 99999
+
+outcome=NOT_FOUND reason=Record not found

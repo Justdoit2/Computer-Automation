@@ -1,0 +1,4 @@
+# Live replay — empty member id (validation)
+# npm run replay -- --member EMPTY
+
+outcome=VALIDATION_ERROR reason=Member ID is required

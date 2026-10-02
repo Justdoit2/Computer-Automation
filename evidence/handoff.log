@@ -1,0 +1,10 @@
+# Live same-session handoff (W8). Agent typed Member ID; human clicked Search on that Chromium.
+
+controller=human
+intervention=evidence/intervention.json
+Same Chromium window is yours. Click Search, then come back here.
+Press Enter when you are done (hand control back):
+controller=agent
+humanActions=[{"tag":"BUTTON","name":"Search","at":"2026-09-27T23:24:39.524Z"}]
+savingsBalance=$1,240.55
+handoff=evidence/handoff.json

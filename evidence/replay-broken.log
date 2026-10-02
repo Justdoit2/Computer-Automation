@@ -1,0 +1,5 @@
+# Injected hard failure: extract a rowheader that does not exist
+# npm run replay -- --member 12345 --broken
+
+outcome=failed step=3 expected=extract to succeed observed=locator.innerText: Timeout 3000ms exceeded.
+screenshot=evidence/replay-failure.png

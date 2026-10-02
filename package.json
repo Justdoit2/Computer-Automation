@@ -1,0 +1,27 @@
+{
+  "name": "computer-use-automation",
+  "private": true,
+  "type": "module",
+  "description": "interface.ai take-home: computer-use discovery, capability artifact, deterministic replay",
+  "scripts": {
+    "mock": "node mock-app/server.mjs",
+    "smoke": "tsx scripts/smoke.ts",
+    "discover": "tsx scripts/discover.ts",
+    "test:artifact": "tsx scripts/test-artifact.ts",
+    "replay": "tsx scripts/replay.ts",
+    "test:policy": "tsx scripts/test-policy.ts",
+    "handoff": "tsx scripts/handoff.ts",
+    "evidence": "tsx scripts/capture-evidence.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "playwright": "^1.63.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.3",
+    "openai": "^6.32.0",
+    "zod": "^4.3.6"
+  }
+}

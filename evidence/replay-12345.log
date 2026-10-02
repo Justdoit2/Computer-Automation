@@ -1,0 +1,4 @@
+# Live replay of capabilities/lookup-member.v1.json — no LLM
+# npm run replay -- --member 12345
+
+savingsBalance=$1,240.55

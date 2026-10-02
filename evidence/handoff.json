@@ -1,0 +1,15 @@
+{
+  "controllerAfter": "agent",
+  "humanActions": [
+    {
+      "tag": "BUTTON",
+      "name": "Search",
+      "at": "2026-09-27T23:24:39.524Z"
+    }
+  ],
+  "savingsBalance": "$1,240.55",
+  "screenshots": {
+    "before": "/Users/almaniu/dev/computer-use-automation/evidence/handoff-before.png",
+    "after": "/Users/almaniu/dev/computer-use-automation/evidence/handoff-after.png"
+  }
+}

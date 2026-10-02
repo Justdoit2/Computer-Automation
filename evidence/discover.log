@@ -1,0 +1,9 @@
+# Live discovery run (W3/W4). Vendor: OpenAI chat.completions, model gpt-4o-mini.
+# Goal: Look up member 12345 and read their current savings balance
+# Mock: http://127.0.0.1:3000  (Harbor CU Core)
+
+step 1: type Member ID=12345
+step 2: click button "Search"
+step 3: finish {"status":"success","savingsBalance":"$1,240.55"}
+savingsBalance=$1,240.55
+artifact=capabilities/lookup-member.v1.json
